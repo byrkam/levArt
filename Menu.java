@@ -71,6 +71,7 @@ public class Menu extends javax.swing.JFrame {
         jButton_make = new javax.swing.JButton();
         jButton_About = new javax.swing.JButton();
         jButton_Contact = new javax.swing.JButton();
+        jButton_Review = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Antenna");
@@ -174,6 +175,15 @@ public class Menu extends javax.swing.JFrame {
         jButton_Contact.setBackground(new java.awt.Color(102, 255, 102));
         jButton_Contact.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jButton_Contact.setText("Contact ");
+        jButton_Contact.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton_ContactActionPerformed(evt);
+            }
+        });
+
+        jButton_Review.setBackground(new java.awt.Color(102, 255, 102));
+        jButton_Review.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jButton_Review.setText("Review");
 
         org.jdesktop.layout.GroupLayout layout = new org.jdesktop.layout.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -183,6 +193,7 @@ public class Menu extends javax.swing.JFrame {
             .add(layout.createSequentialGroup()
                 .add(98, 98, 98)
                 .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
+                    .add(jButton_Review, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 235, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                     .add(jButton_About, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 235, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                     .add(jButton_Cancel)
                     .add(jButton_View, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 235, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
@@ -218,7 +229,9 @@ public class Menu extends javax.swing.JFrame {
                 .add(jButton_Contact, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 55, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                 .add(27, 27, 27)
                 .add(jButton_About, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 52, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .add(95, 95, 95))
+                .add(30, 30, 30)
+                .add(jButton_Review, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 52, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         pack();
@@ -328,6 +341,15 @@ public class Menu extends javax.swing.JFrame {
             evt.consume();}
 
     }//GEN-LAST:event_jTextField5KeyTyped
+
+    private void jButton_ContactActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_ContactActionPerformed
+        
+            Customer_Chat ch = new Customer_Chat();
+            ch.setVisible(true);
+            ch.pack();
+            ch.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            this.dispose();
+    }//GEN-LAST:event_jButton_ContactActionPerformed
     
    public boolean checkCode(String code)
     {
@@ -399,6 +421,7 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JButton jButton_About;
     private javax.swing.JButton jButton_Cancel;
     private javax.swing.JButton jButton_Contact;
+    private javax.swing.JButton jButton_Review;
     private javax.swing.JButton jButton_View;
     private javax.swing.JButton jButton_logout;
     private javax.swing.JButton jButton_make;
