@@ -37,6 +37,9 @@ public class Login_page extends javax.swing.JFrame {
          Border jlabel_create_account_border = BorderFactory.createMatteBorder(0, 0, 1, 0, Color.lightGray);
         jLabel_Create_Account.setBorder(jlabel_create_account_border);
         
+        Border jlabel_admin_border = BorderFactory.createMatteBorder(0, 0, 1, 0, Color.lightGray);
+
+        Admin_Login.setBorder(jlabel_admin_border);
         
         // Border for the minimize and close buttons
         panel_min.setBorder(jlabel_title_border);
@@ -63,6 +66,7 @@ public class Login_page extends javax.swing.JFrame {
         password_jfield = new javax.swing.JPasswordField();
         login_button = new javax.swing.JButton();
         jLabel_Create_Account = new javax.swing.JLabel();
+        Admin_Login = new javax.swing.JLabel();
         panel_min = new javax.swing.JLabel();
         panel_close = new javax.swing.JLabel();
         title_label = new javax.swing.JLabel();
@@ -142,46 +146,64 @@ public class Login_page extends javax.swing.JFrame {
             }
         });
 
+        Admin_Login.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        Admin_Login.setForeground(new java.awt.Color(255, 51, 51));
+        Admin_Login.setText("Are you an Admin? Login Now!");
+        Admin_Login.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Admin_Login.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Admin_LoginMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                Admin_LoginMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                Admin_LoginMouseExited(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel2))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(username_jfield)
-                            .addComponent(password_jfield, javax.swing.GroupLayout.DEFAULT_SIZE, 237, Short.MAX_VALUE)))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(39, 39, 39)
-                        .addComponent(jLabel_Create_Account)))
-                .addContainerGap(229, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(username_jfield)
+                    .addComponent(password_jfield, javax.swing.GroupLayout.DEFAULT_SIZE, 237, Short.MAX_VALUE))
+                .addContainerGap(288, Short.MAX_VALUE))
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(39, 39, 39)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel_Create_Account)
+                    .addComponent(Admin_Login))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(login_button, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(26, 26, 26))
+                .addGap(39, 39, 39))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(50, 50, 50)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(username_jfield, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(62, 62, 62)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(password_jfield, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(34, 34, 34)
-                .addComponent(login_button, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(19, 19, 19)
-                .addComponent(jLabel_Create_Account)
-                .addContainerGap(39, Short.MAX_VALUE))
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(login_button, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel1)
+                            .addComponent(username_jfield, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(62, 62, 62)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel2)
+                            .addComponent(password_jfield, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(90, 90, 90)
+                        .addComponent(jLabel_Create_Account)))
+                .addGap(38, 38, 38)
+                .addComponent(Admin_Login)
+                .addContainerGap(44, Short.MAX_VALUE))
         );
 
         panel_min.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
@@ -224,7 +246,7 @@ public class Login_page extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(title_label)
-                .addGap(175, 175, 175)
+                .addGap(204, 204, 204)
                 .addComponent(panel_min, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(panel_close, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -237,16 +259,13 @@ public class Login_page extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(panel_min)
-                            .addComponent(panel_close))
-                        .addGap(0, 18, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(title_label)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(panel_min)
+                        .addComponent(panel_close))
+                    .addComponent(title_label))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -430,6 +449,33 @@ public class Login_page extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jLabel_Create_AccountMouseClicked
 
+    private void Admin_LoginMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Admin_LoginMouseClicked
+              
+        Admin_Login ad = new Admin_Login();
+        ad.setVisible(true);
+        ad.pack();
+        ad.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.dispose();
+
+        
+    }//GEN-LAST:event_Admin_LoginMouseClicked
+
+    private void Admin_LoginMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Admin_LoginMouseEntered
+       
+        Border label_border = BorderFactory.createMatteBorder(0,0,1,0,Color.red);
+        Admin_Login.setBorder(label_border);
+
+        
+    }//GEN-LAST:event_Admin_LoginMouseEntered
+
+    private void Admin_LoginMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Admin_LoginMouseExited
+               
+        Border jlabel_create_account_border = BorderFactory.createMatteBorder(0, 0, 1, 0, Color.lightGray);
+        Admin_Login.setBorder(jlabel_create_account_border);
+
+
+    }//GEN-LAST:event_Admin_LoginMouseExited
+
     /**
      * @param args the command line arguments
      */
@@ -466,6 +512,7 @@ public class Login_page extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel Admin_Login;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel_Create_Account;
