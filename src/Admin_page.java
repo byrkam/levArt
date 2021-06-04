@@ -78,7 +78,7 @@ public class Admin_page extends javax.swing.JFrame {
                 .addContainerGap(43, Short.MAX_VALUE))
         );
 
-        msg_send.setText("jButton1");
+        msg_send.setText("Send");
         msg_send.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 msg_sendActionPerformed(evt);
@@ -88,8 +88,6 @@ public class Admin_page extends javax.swing.JFrame {
         mag_area.setColumns(20);
         mag_area.setRows(5);
         jScrollPane3.setViewportView(mag_area);
-
-        msg_text.setText("jTextField1");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
