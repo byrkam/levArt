@@ -163,7 +163,7 @@ public class Admin_Login extends javax.swing.JFrame {
             if(rs.next())
             {
                 // show a new form
-                Admin_page ad = new Admin_page();
+                Admin_Menu ad = new Admin_Menu();
                 ad.setVisible(true);
                 ad.pack();
                 ad.setLocationRelativeTo(null);
